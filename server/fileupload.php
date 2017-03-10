@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit; // finish preflight CORS requests here
 }
 
-
 if ( !empty($_REQUEST[ 'debug' ]) ) {
     $random = rand(0, intval($_REQUEST[ 'debug' ]) );
     if ( $random === 0 ) {
