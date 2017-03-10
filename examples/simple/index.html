@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>我的测试</title>
+	<script type="text/javascript" src="./jquery.js"></script>
+	<script type="text/javascript" src="../../dist/webuploader.js"></script>
+	<script type="text/javascript" src="./codeuploader.js"></script>
+</head>
+<style>
+.webuploader-container {
+    position: relative;
+}
+.webuploader-element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+    font-size: 18px;
+    background: #00b7ee;
+    border-radius: 3px;
+    line-height: 44px;
+    padding: 0 30px;
+    color: #fff;
+    display: inline-block;
+    margin: 20px auto 2px;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #00b7ee;  
+    /*padding: 10px 15px;*/
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+</style>
+<body>
+	<div id="filePicker"></div>
+    <script>
+    	$(function(){
+    		$("#filePicker").webuploader({
+    			pick: {
+			        id: '#filePicker',
+			        label: '选择文件',
+			    },
+			    formData: {
+			        uid: 123,
+			    },
+			    swf: '../../dist/Uploader.swf',
+			    chunked: true,
+			    chunkSize: 512 * 1024,
+			    server: '../../server/fileupload.php',
+			    disableGlobalDnd: true,
+			    fileNumLimit: 300,
+			    fileSizeLimit: 200 * 1024 * 1024,    // 200 M
+			    fileSingleSizeLimit: 50 * 1024 * 1024,    // 50 M
+    			success:function(data){
+    				// 上传成功需要执行的操作
+    			}
+    		});
+    	})
+    </script>
+</body>
+</html>
