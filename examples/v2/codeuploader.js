@@ -22,7 +22,7 @@ $(function(){
 			    swf: config.swf?config.swf:'../../dist/Uploader.swf',
 			    chunked: config.chunked?config.chunked:false,
 			    chunkSize: config.chunkSize?config.chunkSize:512 * 1024,
-			    server: config.server?config.server:'../../server/primary.php',
+			    server: config.server?config.server:'../../server/v2.php',
 			    disableGlobalDnd: true,
 			    fileNumLimit: 300,
 			    fileSizeLimit: 200 * 1024 * 1024,    // 200 M
